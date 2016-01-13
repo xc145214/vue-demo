@@ -1,0 +1,24 @@
+{
+  "name": "vue-demo",
+  "authors": [
+    "xc145214 <xc145214@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~1.0.14",
+    "vue-resource": "~0.6.0",
+    "bootstrap": "~3.3.6"
+  }
+}

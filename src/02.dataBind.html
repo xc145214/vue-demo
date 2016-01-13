@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+<body>
+
+<div id="app">
+
+    <h2>text</h2>
+
+    <span>message:{{msg}}</span>
+
+    <h2>text no change</h2>
+    <span>this will never change: {{* msg}}</span>
+
+    <button v-on:click="changeMsg">change msg</button>
+
+    <h2>html</h2>
+    <div>{{{ raw_html }}}</div>
+
+
+    <h2>javscript</h2>
+    {{ number + 1 }} <br>
+
+    {{ ok ? 'YES' : 'NO' }}<br>
+
+    {{ message.split('').reverse().join('') }}<br>
+
+
+
+
+</div>
+
+
+
+
+
+<script src="lib/vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "hello world!",
+            raw_html: "<h1>html element</h1>",
+            number: 10,
+            ok: true,
+            message: "what are you doing?",
+            book: {
+                id: 0,
+                author: '',
+                name: '',
+                price: ''
+            },
+            books: [{
+                id: 1,
+                author: '曹雪芹',
+                name: '红楼梦',
+                price: 32.0
+            }, {
+                id: 2,
+                author: '施耐庵',
+                name: '水浒传',
+                price: 30.0
+            }, {
+                id: '3',
+                author: '罗贯中',
+                name: '三国演义',
+                price: 24.0
+            }, {
+                id: 4,
+                author: '吴承恩',
+                name: '西游记',
+                price: 20.0
+            }]
+        },
+        created: function () {
+            console.log(this.msg);
+            this.msg = "hello vue.js!"
+        },
+        methods: {
+            changeMsg: function () {
+                this.msg = "hello changed!"
+            }
+        }
+    });
+
+    new Vue({
+        el:"#add-book",
+    })
+
+</script>
+</body>
+</html>
